@@ -405,38 +405,59 @@ This `README.md` file contains a collection of JavaScript practice exercises wit
         }
     }
     ```
-58. Make the loop jump to the next iteration when i is 5.
-for (i = 0; i < 10; i++) {
-    if (i == 5) {
-        continue;
+## Switch Statement and Loops
+
+58. Make the loop jump to the next iteration when `i` is `5`.
+    ```javascript
+    for (let i = 0; i < 10; i++) {
+        if (i == 5) {
+            continue;
+        }
+        console.log(i);
     }
-    console.log(i);
-}
+    ```
 
-59. Use the getElementById method to find the <p> element, and change its text to "Hello".
-	document.getElementById("demo").innerHTML = "Hello";
+59. Use the `getElementById` method to find the `<p>` element, and change its text to "Hello".
+    ```javascript
+    document.getElementById("demo").innerHTML = "Hello";
+    ```
 
-60. Use the getElementsByTagName method to find the first <p> element, and change its text to "Hello".
-	document.getElementsByTagName("p")[0].innerHTML = "Hello";
+60. Use the `getElementsByTagName` method to find the first `<p>` element, and change its text to "Hello".
+    ```javascript
+    document.getElementsByTagName("p")[0].innerHTML = "Hello";
+    ```
 
 61. Change the text of the first element that has the class name "test".
-	document.getElementsByClassName("test")[0].innerHTML = "Hello";
+    ```javascript
+    document.getElementsByClassName("test")[0].innerHTML = "Hello";
+    ```
 
-62. Use HTML DOM to change the value of the image's src attribute.
-	document.getElementById("image").src = "pic_mountain.jpg";
+62. Use HTML DOM to change the value of the image's `src` attribute.
+    ```javascript
+    document.getElementById("image").src = "pic_mountain.jpg";
+    ```
 
 63. Use HTML DOM to change the value of the input field.
-	document.getElementById("myText").value = "Have a nice day!";
+    ```javascript
+    document.getElementById("myText").value = "Have a nice day!";
+    ```
 
-64. Change the text color of the <p> element to "red".
-	document.getElementById("demo").style.color = "red";
+64. Change the text color of the `<p>` element to "red".
+    ```javascript
+    document.getElementById("demo").style.color = "red";
+    ```
 
-65. Change the font size of the p element to 40 pixels.
-	document.getElementById("demo").style.fontSize = "40px";
+65. Change the font size of the `<p>` element to 40 pixels.
+    ```javascript
+    document.getElementById("demo").style.fontSize = "40px";
+    ```
 
-66. Use the CSS display property to hide the p element.
-	document.getElementById("demo").style.display = "none";
+66. Use the CSS `display` property to hide the `<p>` element.
+    ```javascript
+    document.getElementById("demo").style.display = "none";
+    ```
 
-67. Use the eventListener to assign an onclick event to the <button> element.
-	document.getElementById("demo").addEventListener("click", myFunction);
-
+67. Use the `addEventListener` method to assign an `onclick` event to the `<button>` element.
+    ```javascript
+    document.getElementById("demo").addEventListener("click", myFunction);
+    ```
