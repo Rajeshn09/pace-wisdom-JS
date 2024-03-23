@@ -11,7 +11,8 @@ The calculator tool allows you to perform basic arithmetic operations such as ad
 To-Do List 📝
 The to-do list tool helps you organize your tasks by allowing you to add, remove, and mark tasks as completed. You can easily add new tasks by typing them into the input field and pressing Enter. Completed tasks are marked with a check mark emoji.
 
-![to-do-l![to-do-list2](https://github.com/Rajeshn09/pace-wisdom-JS/assets/117788569/39677aa1-7aa1-4319-b65d-3ef07b754b32)
+![to-do-list1](https://github.com/Rajeshn09/pace-wisdom-JS/assets/117788569/e8bde0f9-5027-4dd7-bc50-aa5360478fad)
+
 ![to-do-list2](https://github.com/Rajeshn09/pace-wisdom-JS/assets/117788569/86db450e-d755-40cd-a1b6-5ce7f709dec2)
 
 
