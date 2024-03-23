@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cool Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .calculator {
+            background-color: #444;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .calculator-header {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .calculator-buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        .button {
+            background-color: #666;
+            color: #fff;
+            padding: 10px;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #555;
+        }
+
+        .button:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px #fff, 0 0 0 4px #00f;
+        }
+
+        .output {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            font-size: 1.5rem;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <h2 class="calculator-header">Calculator</h2>
+        <div class="output" id="output">0</div>
+        <div class="calculator-buttons">
+            <button class="button" onclick="appendToOutput('1')">1</button>
+            <button class="button" onclick="appendToOutput('2')">2</button>
+            <button class="button" onclick="appendToOutput('3')">3</button>
+            <button class="button" onclick="appendToOutput('+')">+</button>
+            <button class="button" onclick="appendToOutput('4')">4</button>
+            <button class="button" onclick="appendToOutput('5')">5</button>
+            <button class="button" onclick="appendToOutput('6')">6</button>
+            <button class="button" onclick="appendToOutput('-')">-</button>
+            <button class="button" onclick="appendToOutput('7')">7</button>
+            <button class="button" onclick="appendToOutput('8')">8</button>
+            <button class="button" onclick="appendToOutput('9')">9</button>
+            <button class="button" onclick="appendToOutput('*')">*</button>
+            <button class="button" onclick="appendToOutput('0')">0</button>
+            <button class="button" onclick="clearOutput()">C</button>
+            <button class="button" onclick="calculate()">=</button>
+            <button class="button" onclick="appendToOutput('/')">/</button>
+        </div>
+    </div>
+
+    <script>
+        function appendToOutput(value) {
+            const output = document.getElementById('output');
+            if (output.textContent === '0' && value !== 'C') {
+                output.textContent = value;
+            } else if (value === 'C') {
+                output.textContent = '0';
+            } else {
+                output.textContent += value;
+            }
+        }
+
+        function clearOutput() {
+            document.getElementById('output').textContent = '0';
+        }
+
+        function calculate() {
+            const output = document.getElementById('output');
+            try {
+                const result = eval(output.textContent);
+                output.textContent = result;
+            } catch (error) {
+                output.textContent = 'Error';
+            }
+        }
+    </script>
+</body>
+</html>

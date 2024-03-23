@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Digital Clock</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: black; 
+        }
+
+        .clock {
+            font-family: Arial, sans-serif;
+            font-size: 4rem;
+            color: white; 
+            text-shadow: 0 0 10px neonGreen, 0 0 20px neonGreen, 0 0 30px neonGreen, 0 0 40px neonGreen, 0 0 50px neonGreen, 0 0 60px neonGreen, 0 0 70px neonGreen; /* Neon text shadow */
+            background-color: black; 
+            padding: 20px; 
+            border-radius: 10px; 
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.5); 
+        }
+        #time{
+            color: neonGreen; 
+            text-shadow: 0 0 4px #fff, 0 0 20px #fff, 0 0 30px #0ff, 0 0 40px #0ff, 0 0 50px #0ff, 0 0 60px #0ff, 0 0 70px #0ff;
+        }
+    </style>
+</head>
+<body>
+    <div class="clock">
+        <div id="time"></div>
+    </div>
+
+    <script>
+        function updateClock() {
+            const now = new Date();
+            let hours = now.getHours();
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+
+            
+            const amPm = hours >= 12 ? 'PM' : 'AM';
+            hours = hours % 12 || 12; 
+
+            const timeString = `${hours}:${minutes}:${seconds} ${amPm}`;
+            document.getElementById('time').textContent = timeString;
+        }
+
+        setInterval(updateClock, 1000);
+
+        updateClock();
+    </script>
+</body>
+</html>
