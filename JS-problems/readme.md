@@ -1,8 +1,8 @@
-JavaScript Problem Solver 💡
+#JavaScript Problem Solver 💡
 This project is a simple web application that allows users to solve various JavaScript problems interactively. It provides a user-friendly interface where users can select a problem from a dropdown menu, input the required data, and see the solution dynamically displayed on the screen.
 
 
-Problems Included 📋
+#Problems Included 📋
 The application currently includes solutions for the following JavaScript problems:
 
 Multiply
@@ -34,7 +34,7 @@ Usage 🛠️
 
 To use the application, simply open the index.html file in your web browser. Select a problem from the dropdown menu, enter the required input data, and click the corresponding button to see the solution.
 
-outputs 🎉
+#outputs 🎉
 
 ![Screenshot 2024-03-23 191541](https://github.com/Rajeshn09/pace-wisdom-JS/assets/117788569/8afd9203-2e77-4c89-875d-eabd850e9edd)
 ![Screenshot 2024-03-23 191324](https://github.com/Rajeshn09/pace-wisdom-JS/assets/117788569/944e5686-c35b-4f03-91cd-393bb4cb6335)
