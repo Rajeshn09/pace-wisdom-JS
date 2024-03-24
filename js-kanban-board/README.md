@@ -1,4 +1,4 @@
-![kanban-2](https://github.com/Rajeshn09/pace-wisdom-JS/assets/117788569/e8dc41fc-40af-4d85-b9f6-0f1f36db17ba)Kanban Board 📋
+Kanban Board 📋
 This is a simple Kanban Board web application built using HTML, CSS, and JavaScript. It allows users to manage tasks across three columns: "To Do," "In Progress," and "Completed."
 
 Features ✨
