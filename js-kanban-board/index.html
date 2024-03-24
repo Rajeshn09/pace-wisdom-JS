@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanban Board</title>
+    <style>
+       body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .kanban-board {
+            display: flex;
+        }
+        #todo-column{
+            background-color: #C5EBAA;
+        }
+        #progress-column{
+            background-color: #F2C18D;
+        }
+        #completed-column{
+            background-color: #B5C0D0;
+        }
+       h1{
+        text-align: center;
+        color: crimson;
+       }
+
+        .column {
+            flex: 1;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            margin: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .column h2 {
+            margin-top: 0;
+            font-size: 20px;
+            color: #333;
+            text-align: center;
+        }
+
+        .task {
+            background-color: #FF8080;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .buttons {
+            margin-top: 5px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .buttons button {
+            margin-right: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .progress-btn {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .completed-btn {
+            background-color: #28a745;
+            color: #fff;
+        }
+
+        .add-task-btn {
+            background-color: #ffc107;
+            color: #000;
+        }
+        #task-input{    
+            border-radius: 20px;
+            background-color: rgb(247, 241, 241);
+            height: 30px;
+            
+        }
+    </style>
+</head>
+
+<body>
+<h1>KANBAN BOARD</h1>
+    <div class="kanban-board">
+        <div class="column" id="todo-column">
+            <h2>To Do</h2>
+            <input type="text" id="task-input" placeholder="Enter task name">
+            <button class="add-task-btn" onclick="addTask()">Add Task</button>
+            
+        </div>
+
+        <div class="column" id="progress-column">
+            <h2>In Progress</h2>
+            
+        </div>
+
+        <div class="column" id="completed-column">
+            <h2>Completed</h2>
+            
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const todoColumn = document.getElementById('todo-column');
+            const progressColumn = document.getElementById('progress-column');
+            const completedColumn = document.getElementById('completed-column');
+
+            todoColumn.addEventListener('click', function (event) {
+                if (event.target.classList.contains('progress-btn')) {
+                    const task = event.target.parentNode.parentNode;
+                    progressColumn.appendChild(task);
+                    task.querySelector('.buttons').innerHTML = '<button class="completed-btn">Completed</button>';
+                } else if (event.target.classList.contains('completed-btn')) {
+                    const task = event.target.parentNode.parentNode;
+                    completedColumn.appendChild(task);
+                    
+                    task.querySelector('.buttons').remove();
+                }
+            });
+
+            progressColumn.addEventListener('click', function (event) {
+                if (event.target.classList.contains('completed-btn')) {
+                    const task = event.target.parentNode.parentNode;
+                    completedColumn.appendChild(task);
+                    
+                    task.querySelector('.buttons').remove();
+                }
+            });
+        });
+
+        function addTask() {
+    const todoColumn = document.getElementById('todo-column');
+    const taskInput = document.getElementById('task-input');
+    const taskName = taskInput.value.trim();
+    if (taskName !== '') {
+        const newTask = document.createElement('div');
+        newTask.classList.add('task');
+        newTask.draggable = true;
+        newTask.textContent = taskName;
+       
+        const { date, time } = getCurrentDateTime();
+        
+        newTask.innerHTML += `
+            <div class="buttons">
+                <button class="progress-btn">To Progress</button>
+                <button class="completed-btn">Completed</button>
+            </div>
+            <p>${date} ${time}</p>`;
+        todoColumn.appendChild(newTask);
+        taskInput.value = '';
+    } else {
+        alert('Please enter a task name.');
+    }
+}
+function getCurrentDateTime() {
+    const currentDate = new Date();
+    const date = currentDate.toLocaleDateString(); 
+    const timeOptions = { hour: 'numeric', minute: '2-digit', hour12: true };
+    const time = currentDate.toLocaleTimeString('en-US', timeOptions);
+    return { date, time };
+}
+    </script>
+
+</body>
+
+</html>
